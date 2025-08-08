@@ -6,4 +6,11 @@ terraform {
         version = ">= 5.1"
     }
   }
+    backend "s3" {
+    bucket         = "my-s3-backend-bucket-1"
+    key            = "prod/terraform.tfstate"
+    region         = "ap-south-1"
+    encrypt = true
+    use_lockfile = true
+  }
 }
